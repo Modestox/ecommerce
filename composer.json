@@ -1,0 +1,16 @@
+{
+    "name": "modestox/ecommerce",
+    "description": "Modestox E-commerce Laravel package",
+    "minimum-stability": "stable",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "modestox",
+            "email": "ubuntu.ksm@gmail.com",
+            "homepage": "https://github.com/Modestox"
+        }
+    ],
+    "require": {
+        "php": "^8.1"
+    }
+}
