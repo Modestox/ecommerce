@@ -8,15 +8,10 @@ use Illuminate\Support\Facades\Route;
 Route::group(
     [
         'namespace' => 'Modestox\Ecommerce\Core\Auth\Controllers',
-        'prefix'    => 'test'
+        'prefix'    => 'auth'
     ],
     function () {
         Route::get('/', 'IndexController@index')->name('auth.index');
     }
 );
 
-
-
-//Route::get('/test', function () {
-//    return view('Auth::index');
-//});

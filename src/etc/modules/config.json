@@ -1,7 +1,8 @@
 {
     "modules": {
         "Core": {
-            "Auth": 1
+            "Auth": 1,
+            "Console": 1
         }
     }
 }

@@ -17,7 +17,6 @@ class EcommerceServiceProvider extends ServiceProvider
          */
         $this->updateConfigFilesystems();
 
-
         /**
          * Init Config
          */
@@ -79,6 +78,12 @@ class EcommerceServiceProvider extends ServiceProvider
                     $settings = json_decode(file_get_contents($path), true);
                     config([Str::lower($module) => $settings]);
                 }
+
+//                if ($this->app->runningInConsole()) {
+//                    $this->commands([
+//                        InstallCommand::class,
+//                    ]);
+//                }
 
 //                $rawSettings = json_decode($request->get('settings'), true);
 //                $text = json_encode($rawSettings, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
