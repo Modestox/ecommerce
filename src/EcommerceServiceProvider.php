@@ -5,6 +5,7 @@
 
 namespace Modestox\Ecommerce;
 
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 use Illuminate\Support\ServiceProvider;
 
@@ -79,11 +80,30 @@ class EcommerceServiceProvider extends ServiceProvider
                     config([Str::lower($module) => $settings]);
                 }
 
-//                if ($this->app->runningInConsole()) {
+                /**
+                 * Init Console Commands
+                 */
+                if ($this->app->runningInConsole()) {
+                    $path = sprintf('%s/%s/%s/%s', __DIR__, $key_pools, $module, 'Console/Commands');
+
+                    if (is_dir($path)) {
+
+                        $files = File::Files($path);
+
+                        foreach ($files as $file) {
+                            if ($file->getExtension() == 'php') {
+                                echo $file->getBasename();
+
+                            }
+                        }
+                        //var_dump($files);
+                        dd(1);
+
+                    }
 //                    $this->commands([
 //                        InstallCommand::class,
 //                    ]);
-//                }
+                }
 
 //                $rawSettings = json_decode($request->get('settings'), true);
 //                $text = json_encode($rawSettings, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);

@@ -1,13 +1,13 @@
 <?php
 
-namespace Modestox\Ecommerce\Core\Console\Commands;
+namespace Modestox\Ecommerce\Core\Console\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
-class EcommerceMake extends Command
+class EcommerceMakeCommand extends Command
 {
     protected $_files;
 
